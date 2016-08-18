@@ -16,7 +16,7 @@ Either install this as a
 
 The functions in this plugin are mostly wrappers or aliases to other functions
 in wordpress. The main idea is that instead of calling something like
-`get_thepermalink` or `site_url('/some-uri/')`, you can call `url($post)` or
+`get_permalink` or `site_url('/some-uri/')`, you can call `url($post)` or
 `url('/some-uri/')` and then the function figures out which URL you actually
 wanted.
 
