@@ -4,7 +4,7 @@ Helper functions and aliases for WordPress.
 
 A full list of helpers can be found in the documentation for the plugin.
 
-You can find documentation in the [api for the plugin](http://invokemedia.github.io/invoke-helpers). You can also visit the plugin on the [WordPress plugin website](https://wordpress.org/plugins/invoke-helpers/).
+You can find documentation in the [api for the plugin](http://invokemedia.github.io/invoke-helpers).
 
 ### Installation
 
