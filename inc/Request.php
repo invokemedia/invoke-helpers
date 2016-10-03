@@ -41,7 +41,7 @@ class Request
     {
         if (is_array($data)) {
             foreach ($data as $key => $element) {
-                $data[$key] = filter($element);
+                $data[$key] = $this->filter($element);
             }
         } else {
             $data = trim(htmlentities(strip_tags($data)));
