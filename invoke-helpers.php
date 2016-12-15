@@ -312,7 +312,7 @@ if (!function_exists('featured_image')) {
 
         $image = (object)wp_get_attachment_metadata(get_post_thumbnail_id($post));
 
-        $image->url = sprintf("/wp-content/uploads/%s", $image->file);
+        $image->url = sprintf(get_site_url() . "/wp-content/uploads/%s", $image->file);
         return $image;
     }
 }
