@@ -311,6 +311,10 @@ if (!function_exists('featured_image')) {
         $post = is_null($post) ? get_post(): $post;
 
         $image = (object)wp_get_attachment_metadata(get_post_thumbnail_id($post));
+        
+        if (!property_exists($image, 'file')) {
+            return null;
+        }
 
         $image->url = sprintf("%s/wp-content/uploads/%s", defined('WP_HOME') ? WP_HOME : get_site_url() , $image->file);
         return $image;
