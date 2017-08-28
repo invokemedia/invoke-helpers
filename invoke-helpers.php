@@ -90,7 +90,7 @@ if (!function_exists('copyright_date')) {
      */
     function copyright_date($year = '2016')
     {
-        return (date('Y') == $year) ? null: '-' . date('Y');
+        return (date('Y') == $year) ? $year : $year . ' - ' . date('Y');
     }
 }
 
