@@ -280,6 +280,7 @@ if (!function_exists('template_is')) {
     function template_is($names)
     {
         $names = is_array($names) ? $names: [$names];
+
         return count(array_filter($names, function ($uri) {
             return $GLOBALS['current_theme_template'] == $uri;
         }));
@@ -337,11 +338,16 @@ if (!function_exists('view')) {
 
             ob_start();
 
+            // adds a comment at the top of included file
+            printf('<!-- %s -->' . PHP_EOL, $filename);
             include(get_template_directory() . '/' . $filename);
 
             return ob_get_clean();
         } catch (Exception $e) {
-            dd(sprintf("%s in %s:%s when using the `view` function.", $e->getMessage(), $filename, $e->getLine()));
+            dd([
+                'message' => sprintf("%s in %s:%s when using the `view` function.", $e->getMessage(), $filename, $e->getLine()),
+                'exception' => $e
+            ]);
         }
     }
 }
