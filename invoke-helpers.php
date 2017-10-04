@@ -329,7 +329,7 @@ if (!function_exists('view')) {
      * @param array $vars
      * @return string
      */
-    function view($filename, $vars = null)
+    function view($filename, $vars = null, $comment = '<!-- %s -->')
     {
         try {
             if (is_array($vars) && !empty($vars)) {
@@ -339,7 +339,10 @@ if (!function_exists('view')) {
             ob_start();
 
             // adds a comment at the top of included file
-            printf('<!-- %s -->' . PHP_EOL, $filename);
+            if (!empty($comment)) {
+                printf($comment . PHP_EOL, $filename);
+            }
+
             include(get_template_directory() . '/' . $filename);
 
             return ob_get_clean();
