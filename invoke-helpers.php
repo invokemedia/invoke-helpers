@@ -232,11 +232,7 @@ if (!function_exists('is_odd')) {
      */
     function is_odd($value)
     {
-        if (is_array($value)) {
-            return count($value) % 2 == 0;
-        }
-
-        return $value % 2 == 0;
+        return !is_even($value);
     }
 }
 
