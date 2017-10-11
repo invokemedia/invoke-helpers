@@ -263,7 +263,7 @@ if (!function_exists('e')) {
      */
     function e($value)
     {
-        echo htmlentities($value, ENT_QUOTES, 'utf-8');
+        return htmlentities($value, ENT_QUOTES, 'utf-8');
     }
 }
 
